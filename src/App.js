@@ -21,7 +21,8 @@ function App() {
   <>
   {/* <ToggleButton />
   <ChangImg />  */}
- 
+      <Header categories={categories} filterArr={filterArr}  />
+    <Products props={products} /> 
   </>
   );
 }
