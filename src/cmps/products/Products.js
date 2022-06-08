@@ -7,7 +7,11 @@ const Products = ({ props }) => {
       <section className ="products">
         {
         props.map((product) => {
-          return <Product key={product.id} price={product.price} title={product.title} image={product.image}/>;
+          return <Product
+           key={product.id} 
+           price={product.price} 
+           title={product.title} 
+           image={product.image}/>;
         })
         }
       </section>

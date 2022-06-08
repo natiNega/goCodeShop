@@ -1,20 +1,25 @@
 import './Header.css'
-const Header = () => (
+const Header = ({categories,filterArr}) => (
     <nav className="product-filter">
-   
-    <div className="sort">
     <h1>Jackets</h1>
+    <div className="sort">
       <div className="collection-sort">
         <label>Filter by:</label>
-        <select>
-          <option value="/">All Jackets</option>
-          <option value="/">2016</option>
-          <option value="/">jacket</option>
-          <option value="/">Jackets</option>
-          <option value="/">layers</option>
-          <option value="/">Obermeyer</option>
-          <option value="/">Roxy</option>
-          <option value="/">womens</option>
+
+        <select className='collection-filter' 
+        onChange = {(e) => filterArr(e.target.value)}>
+        <option value="all">All Products</option>
+          {categories.map((itmeCategory) =>{
+          return(
+            <option>{itmeCategory}</option>
+            // <option>All categories</option>
+          )
+        })
+      }
+         
+      
+            
+  
         </select>
       </div>
 

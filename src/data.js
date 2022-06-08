@@ -1,4 +1,4 @@
-const cardsArray = [
+export const data = [
     {
       id: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -267,4 +267,4 @@ const cardsArray = [
     },
   ];  
 
-  export default cardsArray
+  

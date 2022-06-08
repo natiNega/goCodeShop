@@ -1,14 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './cmps/header/Header'
 import Products from './cmps/products/Products';
-import data from './data'
+import {data} from './data'
+import { useState } from 'react';
+import ChangImg from './toggle_button'
+import ToggleButton from './toggle_button'
 
 function App() {
+  const [products,setProductArray] = useState(data);
+  const categories = data.map(p => p.category)
+  .filter((value, index, array) => array.indexOf(value)===index);
+  
+ function filterArr(category) {
+   return setProductArray(data.filter((product) => category === "all" ? product : product.category === category))
+
+  
+ }
   return (
   <>
-    <Header />
-    <Products props={data} />
+  {/* <ToggleButton />
+  <ChangImg />  */}
+ 
   </>
   );
 }
