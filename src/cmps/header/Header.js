@@ -1,7 +1,15 @@
 import './Header.css'
-const Header = ({categories,filterArr}) => (
+import { useContext } from 'react';
+import CartContext from "../../context/CartContext"
+const Header = ({categories,filterArr}) => {
+
+  const {clearCart} = useContext(CartContext);
+  return(
+  
     <nav className="product-filter">
     <h1>Jackets</h1>
+    <br></br>
+     <div> <button onClick={ () => clearCart()} class="clearCart-button clearCart-button--small">Remove Item From Cart</button></div>
     <div className="sort">
       <div className="collection-sort">
         <label>Filter by:</label>
@@ -13,9 +21,9 @@ const Header = ({categories,filterArr}) => (
           return(
             <option>{itmeCategory}</option>
             // <option>All categories</option>
-          )
-        })
-      }
+            )
+          })
+        }
          
       
             
@@ -38,6 +46,6 @@ const Header = ({categories,filterArr}) => (
       </div>
     </div>
    </nav>
-);
+)};
 
 export default Header;
