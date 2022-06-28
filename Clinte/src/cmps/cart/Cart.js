@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
-import CartItem from "../cartItem/CartItem"
+import CartItem from "../cartItem/CartItem";
 
 const Cart = ({ productCart }) => {
   //creat a new context = "maseit"
@@ -9,23 +9,22 @@ const Cart = ({ productCart }) => {
 
   return (
     <div>
-      
       <section className="CartItem">
         {productCart.map((cartItem) => {
           return (
-            <CartItem 
+            <CartItem
               key={cartItem.id}
               id={cartItem.id}
               price={cartItem.price}
               title={cartItem.title}
               image={cartItem.image}
-             qty = {cartItem.qty}
+              quntity={cartItem.quntity}
             />
           );
         })}
       </section>
-      
-{/* 
+
+      {/* 
       {cart.map((product) => {
         cart.map((product) => <div>{product}</div>);
 
